@@ -22,15 +22,6 @@ const InformationTabs: React.FC = () => {
               reading/writing large files and too many small files, as a HTTP
               server and as a package manager.
             </p>
-
-            <h3 className="text-xl font-semibold">Methodology</h3>
-            <p>
-              Our benchmark methodology is designed to provide a comprehensive
-              and fair comparison between Bun and Node.js runtimes. We've
-              developed a robust codebase that allows for consistent, automated
-              testing across various scenarios.
-            </p>
-
             <br />
             <h4 className="text-lg font-semibold">Testing Process</h4>
             <ul className="list-disc pl-5 space-y-1">
