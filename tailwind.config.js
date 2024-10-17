@@ -54,10 +54,16 @@ export default {
 					'5': 'hsl(var(--chart-5))'
 				},
 				'bun-pink': {
+					DEFAULT: '#f472b6',
 					dark: '#f7c8e0',
-					light: '#f7c8c9',
+					light: '#f472b6',
 				},
-				'node-green': '#68b984',
+				'node-green': {
+					DEFAULT: '#4caf50',
+					dark: '#68b984',
+					light: '#4caf50',
+				},
+				'ozhan': 'var(--ozhan)'
 			}
 		}
 	},

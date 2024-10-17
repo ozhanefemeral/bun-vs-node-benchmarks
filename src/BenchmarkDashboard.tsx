@@ -20,7 +20,7 @@ const BenchmarkDashboard = () => {
 
   const colors = useMemo(
     () => ({
-      bunPink: isDarkMode ? "#f7c8e0" : "#f7c8c9",
+      bunPink: isDarkMode ? "#f7c8e0" : "#f472b6",
       nodeGreen: isDarkMode ? "#68b984" : "#4caf50",
       textColor: isDarkMode ? "#ffffff" : "#000000",
       backgroundColor: isDarkMode ? "#000000" : "#ffffff",
