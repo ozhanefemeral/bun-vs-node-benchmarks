@@ -57,7 +57,11 @@ const BenchmarkDashboard = () => {
         url += `basic/${selectedTest.replace(".json", ".js")}`;
         break;
       case "file":
-        url += `file/${selectedTest.replace(".json", "")}`;
+        if (selectedTest.startsWith("very_large_")) {
+          url += `file/very_large_file_read`;
+        } else {
+          url += `file/${selectedTest.replace(".json", "")}`;
+        }
         break;
       // Add cases for other types if needed
     }
@@ -89,23 +93,8 @@ const BenchmarkDashboard = () => {
           </SelectTrigger>
           <SelectContent>
             {filteredTests.map((test) => (
-              <SelectItem
-                key={test.filename}
-                value={test.filename}
-                disabled={[
-                  "very_large_json_read.json",
-                  "very_large_csv_read.json",
-                ].includes(test.filename)}
-              >
+              <SelectItem key={test.filename} value={test.filename}>
                 {test.title}
-                {[
-                  "very_large_json_read.json",
-                  "very_large_csv_read.json",
-                ].includes(test.filename) && (
-                  <span className="ml-2 text-xs text-muted-foreground">
-                    (soon)
-                  </span>
-                )}
               </SelectItem>
             ))}
           </SelectContent>

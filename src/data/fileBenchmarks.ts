@@ -48,13 +48,15 @@ export const fileTestResults = [
     filename: "very_large_csv_read.json",
     title: "Read Very Big CSV File",
     mainDescription: "Read a very big CSV file (1GB). (Time in seconds)",
-    description: "To be added.",
+    description:
+      "Bun with Bun API was significantly faster for reading a very large CSV file, being about 2.81 times faster than Node.js. Interestingly, running Node.js code with Bun as the runtime was slower than both Bun with Bun API and Node.js itself.",
   },
   {
     filename: "very_large_json_read.json",
     title: "Read Very Big JSON File",
     mainDescription: "Read a very big JSON file (1GB). (Time in seconds)",
-    description: "To be added.",
+    description:
+      "Bun with Bun API was the fastest for reading a very large JSON file, being about 1.25 times faster than Node.js. Interestingly, running Node.js code with Bun as the runtime was slower than both Bun with Bun API and Node.js itself.",
   },
 ];
 
@@ -205,8 +207,46 @@ export const getFileChartData = (filename: string) => {
         },
       ];
     case "very_large_csv_read.json":
-      return [];
+      return [
+        {
+          name: "Bun with Bun API",
+          value: 3.642,
+          min: 3.461,
+          max: 3.912,
+        },
+        {
+          name: "Bun with Node API",
+          value: 19.151,
+          min: 18.478,
+          max: 23.612,
+        },
+        {
+          name: "Node with Node API",
+          value: 10.245,
+          min: 9.604,
+          max: 11.525,
+        },
+      ];
     case "very_large_json_read.json":
-      return [];
+      return [
+        {
+          name: "Bun with Bun API",
+          value: 18.254,
+          min: 17.553,
+          max: 18.913,
+        },
+        {
+          name: "Bun with Node API",
+          value: 31.023,
+          min: 29.708,
+          max: 36.362,
+        },
+        {
+          name: "Node with Node API",
+          value: 22.896,
+          min: 21.728,
+          max: 27.063,
+        },
+      ];
   }
 };
