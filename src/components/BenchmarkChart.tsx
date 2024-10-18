@@ -79,7 +79,7 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({
           <LabelList
             dataKey="value"
             position="insideTop"
-            content={({ x, y, width, height, value, min, max }) => {
+            content={({ x, y, width, value, min, max }) => {
               const xPos = typeof x === "number" ? x : 0;
               const yPos = typeof y === "number" ? y : 0;
               const barWidth = typeof width === "number" ? width : 0;

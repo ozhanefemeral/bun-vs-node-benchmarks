@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   Select,
   SelectContent,
@@ -29,7 +29,10 @@ const BenchmarkDashboard = () => {
   const selectedTestInfo = testResults.find(
     (test) => test.filename === selectedTest
   );
-  const chartData = getChartData(selectedTest, selectedTestInfo?.type);
+  const chartData = getChartData(
+    selectedTest,
+    selectedTestInfo?.type ?? "basic"
+  );
   const isHttpTest = selectedTestInfo?.type === "http";
 
   const colors = {
@@ -73,13 +76,15 @@ const BenchmarkDashboard = () => {
 
       <TestInfo selectedTest={selectedTest} />
 
-      <div className="h-[400px]">
-        <BenchmarkChart
-          chartData={chartData}
-          colors={colors}
-          isHttpTest={isHttpTest}
-        />
-      </div>
+      {chartData && (
+        <div className="h-[400px]">
+          <BenchmarkChart
+            chartData={chartData}
+            colors={colors}
+            isHttpTest={isHttpTest}
+          />
+        </div>
+      )}
     </div>
   );
 };
