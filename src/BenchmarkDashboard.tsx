@@ -15,8 +15,11 @@ const BenchmarkDashboard = () => {
   const [selectedTest, setSelectedTest] = useState(testResults[0].filename);
   const { isDarkMode } = useDarkMode();
 
-  const chartData = getChartData(selectedTest);
-  const isHttpTest = selectedTest === "http_benchmark.json";
+  const selectedTestInfo = testResults.find(
+    (test) => test.filename === selectedTest
+  );
+  const chartData = getChartData(selectedTest, selectedTestInfo?.type);
+  const isHttpTest = selectedTestInfo?.type === "http";
 
   const colors = useMemo(
     () => ({

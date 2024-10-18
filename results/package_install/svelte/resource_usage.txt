@@ -1,0 +1,176 @@
+Bun with lock:
+bun install v1.1.30 (7996d06b)
+[6.63ms] migrated lockfile from package-lock.json
+Saved lockfile
+
++ @fontsource/fira-mono@5.1.0
++ @neoconfetti/svelte@2.2.1
++ @sveltejs/adapter-auto@3.2.5
++ @sveltejs/kit@2.7.1
++ @sveltejs/vite-plugin-svelte@3.1.2
++ @types/eslint@9.6.1
++ eslint@9.12.0
++ eslint-plugin-svelte@2.45.1
++ globals@15.11.0
++ svelte@4.2.19
++ svelte-check@3.8.6
++ typescript@5.6.3
++ typescript-eslint@8.10.0
++ vite@5.4.9
++ vitest@2.1.3
+
+240 packages installed [1157.00ms]
+
+Blocked 1 postinstall. Run `bun pm untrusted` for details.
+	Command being timed: "bash -c rm -rf /root/bun-vs-node/tests/package_install/svelte/node_modules && cd /root/bun-vs-node/tests/package_install/svelte && bun install"
+	User time (seconds): 1.13
+	System time (seconds): 0.40
+	Percent of CPU this job got: 119%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.29
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 159868
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 47655
+	Voluntary context switches: 2725
+	Involuntary context switches: 1584
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 376
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+Bun without lock:
+bun install v1.1.30 (7996d06b)
+Resolving dependencies
+Resolved, downloaded and extracted [206]
+Saved lockfile
+
++ @fontsource/fira-mono@5.1.0
++ @neoconfetti/svelte@2.2.1
++ @sveltejs/adapter-auto@3.2.5
++ @sveltejs/kit@2.7.1
++ @sveltejs/vite-plugin-svelte@3.1.2
++ @types/eslint@9.6.1
++ eslint@9.12.0
++ eslint-plugin-svelte@2.45.1
++ globals@15.11.0
++ svelte@4.2.19
++ svelte-check@3.8.6 (v4.0.5 available)
++ typescript@5.6.3
++ typescript-eslint@8.10.0
++ vite@5.4.9
++ vitest@2.1.3
+
+237 packages installed [3.17s]
+
+Blocked 1 postinstall. Run `bun pm untrusted` for details.
+	Command being timed: "bash -c rm -rf /root/bun-vs-node/tests/package_install/svelte/node_modules /root/bun-vs-node/tests/package_install/svelte/bun.lockb /root/bun-vs-node/tests/package_install/svelte/package-lock.json && cd /root/bun-vs-node/tests/package_install/svelte && bun install"
+	User time (seconds): 1.27
+	System time (seconds): 0.43
+	Percent of CPU this job got: 52%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.24
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 157332
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1
+	Minor (reclaiming a frame) page faults: 52477
+	Voluntary context switches: 3767
+	Involuntary context switches: 2274
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 12488
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+NPM with lock:
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+
+added 239 packages, and audited 240 packages in 10s
+
+58 packages are looking for funding
+  run `npm fund` for details
+
+3 low severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+	Command being timed: "bash -c rm -rf /root/bun-vs-node/tests/package_install/svelte/node_modules && cd /root/bun-vs-node/tests/package_install/svelte && npm install"
+	User time (seconds): 11.29
+	System time (seconds): 2.44
+	Percent of CPU this job got: 129%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.63
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 411832
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 364312
+	Voluntary context switches: 64857
+	Involuntary context switches: 29530
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 189392
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+NPM without lock:
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+
+added 239 packages, and audited 240 packages in 11s
+
+58 packages are looking for funding
+  run `npm fund` for details
+
+3 low severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+	Command being timed: "bash -c rm -rf /root/bun-vs-node/tests/package_install/svelte/node_modules /root/bun-vs-node/tests/package_install/svelte/bun.lockb /root/bun-vs-node/tests/package_install/svelte/package-lock.json && cd /root/bun-vs-node/tests/package_install/svelte && npm install"
+	User time (seconds): 11.32
+	System time (seconds): 2.53
+	Percent of CPU this job got: 128%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.81
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 413676
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 346070
+	Voluntary context switches: 64526
+	Involuntary context switches: 28903
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 189408
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
