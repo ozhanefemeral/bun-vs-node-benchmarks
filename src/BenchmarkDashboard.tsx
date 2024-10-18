@@ -6,6 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
 import { useDarkMode } from "./hooks/useDarkMode";
 import { testResults, getChartData } from "./data/benchmarkResults";
 import BenchmarkChart from "./components/BenchmarkChart";
@@ -44,6 +45,24 @@ const BenchmarkDashboard = () => {
     nodeGreen: isDarkMode ? "#68b984" : "#4caf50",
     textColor: isDarkMode ? "#ffffff" : "#000000",
     backgroundColor: isDarkMode ? "#000000" : "#ffffff",
+  };
+
+  const handleSeeCode = () => {
+    const baseUrl =
+      "https://github.com/ozhanefemeral/bun-vs-node/tree/main/tests/";
+    let url = baseUrl;
+
+    switch (selectedType) {
+      case "basic":
+        url += `basic/${selectedTest.replace(".json", ".js")}`;
+        break;
+      case "file":
+        url += `file/${selectedTest.replace(".json", "")}`;
+        break;
+      // Add cases for other types if needed
+    }
+
+    window.open(url, "_blank");
   };
 
   return (
@@ -91,6 +110,8 @@ const BenchmarkDashboard = () => {
             ))}
           </SelectContent>
         </Select>
+
+        <Button onClick={handleSeeCode}>See Code</Button>
       </div>
 
       <TestInfo selectedTest={selectedTest} />
