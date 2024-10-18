@@ -85,9 +85,9 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({
               const barWidth = typeof width === "number" ? width : 0;
 
               const unit = isHttpTest ? " RPS" : "s";
-              const formattedValue = Number(value).toFixed(2) + unit;
-              const formattedMin = min ? Number(min).toFixed(2) + unit : "";
-              const formattedMax = max ? Number(max).toFixed(2) + unit : "";
+              const formattedValue = Number(value).toFixed(3) + unit;
+              const formattedMin = min ? Number(min).toFixed(3) + unit : "";
+              const formattedMax = max ? Number(max).toFixed(3) + unit : "";
               const rangeText =
                 formattedMin && formattedMax
                   ? `${formattedMin} - ${formattedMax}`
