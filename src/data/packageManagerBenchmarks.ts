@@ -3,57 +3,57 @@ export const packageManagerTestResults = [
     filename: "svelte_install_with_lock.json",
     title: "Svelte Package Installation (with lock)",
     mainDescription:
-      "Install packages for a Svelte project with an existing lock file. (Execution Time in seconds)",
+      "Install packages for a Svelte project with an existing lock file. (Time in seconds)",
     description:
-      "Bun completes the installation in 1.229 seconds, while npm takes 4.521 seconds. This shows that Bun is approximately 3.68 times faster than npm for installing packages in a Svelte project with an existing lock file.",
+      "Bun was much faster for Svelte package installation with a lock file. It was about 3.68 times faster than npm.",
   },
   {
     filename: "svelte_install_without_lock.json",
     title: "Svelte Package Installation (without lock)",
     mainDescription:
-      "Install packages for a Svelte project without an existing lock file. (Execution Time in seconds)",
+      "Install packages for a Svelte project without an existing lock file. (Time in seconds)",
     description:
-      "Bun completes the installation in 1.161 seconds, while npm takes 14.843 seconds. This demonstrates that Bun is about 12.78 times faster than npm for installing packages in a Svelte project without an existing lock file.",
+      "Bun was much faster for Svelte package installation without a lock file. It was about 12.78 times faster than npm.",
   },
   {
     filename: "nextjs_install_with_lock.json",
     title: "Next.js Package Installation (with lock)",
     mainDescription:
-      "Install packages for a Next.js project with an existing lock file. (Execution Time in seconds)",
+      "Install packages for a Next.js project with an existing lock file. (Time in seconds)",
     description:
-      "Bun completes the installation in 0.312 seconds, while npm takes 10.798 seconds. This indicates that Bun is approximately 34.63 times faster than npm for installing packages in a Next.js project with an existing lock file.",
+      "Bun was much faster for Next.js package installation with a lock file. It was about 34.63 times faster than npm.",
   },
   {
     filename: "nextjs_install_without_lock.json",
     title: "Next.js Package Installation (without lock)",
     mainDescription:
-      "Install packages for a Next.js project without an existing lock file. (Execution Time in seconds)",
+      "Install packages for a Next.js project without an existing lock file. (Time in seconds)",
     description:
-      "Bun completes the installation in 0.348 seconds, while npm takes 16.087 seconds. This shows that Bun is about 46.21 times faster than npm for installing packages in a Next.js project without an existing lock file.",
+      "Bun was much faster for Next.js package installation without a lock file. It was about 46.21 times faster than npm. This shows Bun is extremely efficient at resolving and installing dependencies for complex projects from scratch.",
   },
   {
     filename: "expo_react_native_install_with_lock.json",
     title: "Expo React Native Package Installation (with lock)",
     mainDescription:
-      "Install packages for an Expo React Native project with an existing lock file. (Execution Time in seconds)",
+      "Install packages for an Expo React Native project with an existing lock file. (Time in seconds)",
     description:
-      "Bun completes the installation in 0.929 seconds, while npm takes 18.429 seconds. This demonstrates that Bun is approximately 19.83 times faster than npm for installing packages in an Expo React Native project with an existing lock file.",
+      "Bun was much faster for Expo React Native package installation with a lock file. It was about 19.83 times faster than npm.",
   },
   {
     filename: "expo_react_native_install_without_lock.json",
     title: "Expo React Native Package Installation (without lock)",
     mainDescription:
-      "Install packages for an Expo React Native project without an existing lock file. (Execution Time in seconds)",
+      "Install packages for an Expo React Native project without an existing lock file. (Time in seconds)",
     description:
-      "Bun completes the installation in 1.010 seconds, while npm takes 36.393 seconds. This indicates that Bun is about 36.03 times faster than npm for installing packages in an Expo React Native project without an existing lock file.",
+      "Bun was much faster for Expo React Native package installation without a lock file. It was about 36.03 times faster than npm.",
   },
   {
     filename: "bloated_project_add_package.json",
     title: "Add Package to Bloated Project",
     mainDescription:
-      "Add a single package (moment) to a project with many existing dependencies. (Execution Time in seconds)",
+      "Add a single package (moment) to a project with many existing dependencies. (Time in seconds)",
     description:
-      "Bun completes the operation in 0.057 seconds, while npm takes 2.427 seconds. This shows that Bun is approximately 42.96 times faster than npm for adding a single package to a project with many existing dependencies.",
+      "Bun was much faster for adding a single package to a project with many dependencies. It was about 42.96 times faster than npm.",
   },
 ];
 

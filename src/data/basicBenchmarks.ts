@@ -3,33 +3,32 @@ export const basicTestResults = [
     filename: "fibonacci.json",
     title: "Fibonacci",
     mainDescription:
-      "Calculation of Fibonacci(40) with a recursive algorithm. (Execution Time in seconds)",
+      "Calculation of Fibonacci(40) with a recursive algorithm. (Time in seconds)",
     description:
-      "Bun completes the calculation in 1.20 seconds, while Node.js takes 1.94 seconds. This means Bun is approximately 1.62 times faster than Node.js for this recursive Fibonacci calculation.",
+      "Bun was faster for recursive Fibonacci calculation. It was about 1.62 times faster than Node.js.",
   },
   {
     filename: "large_array.json",
     title: "Large Array Operations",
     mainDescription:
-      "Creating and manipulating a large array with 10 million elements. (Execution Time in seconds)",
+      "Creating and manipulating a large array with 1 million elements. (Time in seconds)",
     description:
-      "Bun performs the operations in 0.046 seconds, while Node.js takes 0.063 seconds. This indicates that Bun is about 1.37 times faster than Node.js for large array operations.",
+      "Bun was faster when iterating over a very large array and having a simple calculation over count. It was about 1.37 times faster than Node.js; even with a simple loop over array items.",
   },
   {
     filename: "stringify.json",
     title: "JSON Stringify",
-    mainDescription:
-      "Stringify a simple JavaScript object. (Execution Time in seconds)",
+    mainDescription: "Stringify a simple JavaScript object. (Time in seconds)",
     description:
-      "Bun completes the stringify operation in 0.015 seconds, while Node.js takes 0.032 seconds. This shows that Bun is approximately 2.13 times faster than Node.js for JSON stringify operations on large objects.",
+      "Bun was much faster for a simple JSON stringify operation. It was about 2.13 times faster than Node.js. This shows Bun is very efficient at converting objects to JSON strings.",
   },
   {
     filename: "while_loop.json",
     title: "While Loop",
     mainDescription:
-      "Perform a while loop with 1 million iterations. (Execution Time in seconds)",
+      "Perform a while loop with 1 million iterations. (Time in seconds)",
     description:
-      "Bun executes the while loop in 0.020 seconds, while Node.js takes 0.032 seconds. This demonstrates that Bun is about 1.6 times faster than Node.js for this simple while loop operation.",
+      "Bun was faster for simple while loop operations and counting index. It was about 1.6 times faster than Node.js. Running a plain while loop with Bun had increased performance.",
   },
 ];
 

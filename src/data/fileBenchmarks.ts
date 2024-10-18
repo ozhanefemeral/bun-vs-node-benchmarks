@@ -2,65 +2,62 @@ export const fileTestResults = [
   {
     filename: "compress.json",
     title: "File Compression",
-    mainDescription:
-      "Compress a large file using gzip. (Execution Time in seconds)",
+    mainDescription: "Read and compress a big (~350Mb) file. (Time in seconds)",
     description:
-      "Bun with Bun API completes the compression in 8.854 seconds, Bun with Node API takes 8.706 seconds, while Node.js takes 10.478 seconds. This shows that Bun's Node API compatibility is slightly faster than its native API for this operation, and both are significantly faster than Node.js.",
+      "Bun uses it's native Gzip implementation for compression, while we used 'zlib' library for Node.js. Running Node.js code with Bun was about 1.2 times faster than Node.js itself, while rewriting it with Bun libraries made it slightly slower.",
   },
   {
     filename: "single_large_json_parse.json",
     title: "Large JSON Parse",
-    mainDescription: "Parse a large JSON file. (Execution Time in seconds)",
+    mainDescription:
+      "Read and parse a big (~350Mb) JSON file . (Time in seconds)",
     description:
-      "Bun with Bun API parses the JSON in 4.174 seconds, Bun with Node API takes 4.521 seconds, while Node.js takes 4.522 seconds. This demonstrates that Bun's native API is faster for JSON parsing, while its Node API compatibility performs similarly to Node.js.",
+      "Bun was slightly faster for parsing large JSON. Bun's own API was about 1.47 times faster than Node.js.",
   },
   {
     filename: "small_files_sequential.json",
     title: "Small Files (Sequential)",
     mainDescription:
-      "Read and write many small files sequentially. (Execution Time in seconds)",
+      "Read and write many (100.000) small files (~1Kb) one by one. (Time in seconds)",
     description:
-      "Bun with Bun API completes the operation in 5.950 seconds, Bun with Node API takes 2.024 seconds, while Node.js takes 2.507 seconds (placeholder value). This shows that Bun's Node API compatibility is significantly faster for sequential small file operations, even outperforming Node.js.",
+      "Bun's Node API was faster for sequential small file operations. It was about 1.24 times faster than Node.js. However, Bun runtime with Bun native libraries were drastically slower. Seems like it is best to avoid Bun API for reading small files in a directory, sequentially.",
   },
   {
     filename: "small_files_parallel.json",
     title: "Small Files (Parallel)",
     mainDescription:
-      "Read and write many small files in parallel. (Execution Time in seconds)",
+      "Read and write many (100.000) small files (~1Kb) at the same time. (Time in seconds)",
     description:
-      "Bun with Bun API completes the operation in 2.267 seconds, Bun with Node API takes 2.579 seconds, while Node.js takes 13.275 seconds. This demonstrates that both Bun APIs significantly outperform Node.js for parallel small file operations, with Bun's native API being the fastest.",
+      "Bun was much faster for parallel small file operations. Bun's own API was about 5.86 times faster than Node.js. In this benchmark we read all files in a directory, and parse content of files.",
   },
   {
     filename: "write_large_file.json",
-    title: "Write Large File",
+    title: "Write Big File",
     mainDescription:
-      "Write a large JSON file with 400,000 objects. (Execution Time in seconds)",
+      "Write a big JSON file with 400,000 things. (Time in seconds)",
     description:
-      "Bun with Bun API writes the file in 5.655 seconds, Bun with Node API takes 7.793 seconds, while Node.js takes 12.913 seconds. This shows that Bun's native API is significantly faster for writing large files, with its Node API compatibility also outperforming Node.js.",
+      "Bun was faster for writing large files. Bun's own API was about 2.28 times faster than Node.js. This shows Bun is efficient at handling big data writes.",
   },
   {
     filename: "write_small_files.json",
     title: "Write Small Files",
-    mainDescription:
-      "Write 100,000 small JSON files. (Execution Time in seconds)",
+    mainDescription: "Write 100,000 small JSON files. (Time in seconds)",
     description:
-      "Bun with Bun API completes the operation in 5.007 seconds, Bun with Node API takes 4.366 seconds, while Node.js takes 15.836 seconds. This demonstrates that both Bun APIs significantly outperform Node.js for writing many small files, with Bun's Node API compatibility being slightly faster than its native API for this specific task.",
+      "Bun was much faster for writing many small files. Bun's Node API was about 3.63 times faster than Node.js. This shows Bun is very good at managing many small write operations.",
   },
   {
     filename: "very_large_csv_read.json",
-    title: "Very Large CSV File Read",
-    mainDescription:
-      "Read a very large CSV file (1GB). (Execution Time in seconds)",
+    title: "Read Very Big CSV File",
+    mainDescription: "Read a very big CSV file (1GB). (Time in seconds)",
     description:
-      "Bun with Bun API reads the file in 1.638 seconds, Bun with Node API takes 1.639 seconds, while Node.js takes 2.037 seconds. This demonstrates that both Bun APIs significantly outperform Node.js for reading very large CSV files, with nearly identical performance between Bun's native and Node-compatible APIs.",
+      "Bun was faster for reading very large CSV files. Both Bun APIs were about 1.24 times faster than Node.js. This shows Bun is efficient at processing big data files.",
   },
   {
     filename: "very_large_json_read.json",
-    title: "Very Large JSON File Read",
-    mainDescription:
-      "Read a very large JSON file (1GB). (Execution Time in seconds)",
+    title: "Read Very Big JSON File",
+    mainDescription: "Read a very big JSON file (1GB). (Time in seconds)",
     description:
-      "Bun with Bun API reads the file in 1.638 seconds, Bun with Node API takes 1.639 seconds, while Node.js takes 2.037 seconds. This demonstrates that both Bun APIs significantly outperform Node.js for reading very large JSON files, with nearly identical performance between Bun's native and Node-compatible APIs.",
+      "Bun was faster for reading and parsing very large JSON files. Bun was 1.24 times faster than Node; both with either using it's own API or Node API.",
   },
 ];
 
