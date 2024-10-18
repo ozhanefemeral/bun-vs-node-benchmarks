@@ -1,3 +1,4 @@
+import { ChartDataPoint } from "@/types/benchmarks";
 import {
   Bar,
   BarChart,
@@ -9,7 +10,7 @@ import {
 } from "recharts";
 
 interface BenchmarkChartProps {
-  chartData: any[];
+  chartData: ChartDataPoint[];
   colors: {
     bunPink: string;
     nodeGreen: string;
@@ -42,7 +43,16 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({
     <ResponsiveContainer width="100%" height="100%">
       <BarChart data={chartData}>
         <XAxis dataKey="name" tick={{ fill: colors.textColor }} />
-        <YAxis tick={{ fill: colors.textColor }} />
+        <YAxis
+          tick={{ fill: colors.textColor }}
+          tickFormatter={(value) => (isHttpTest ? value : `${value}s`)}
+          label={{
+            value: isHttpTest ? "Requests per second" : "Time (s)",
+            angle: -90,
+            position: "insideLeft",
+            style: { fill: colors.textColor },
+          }}
+        />
         <defs>
           <pattern
             id="stripes-bun-node"
