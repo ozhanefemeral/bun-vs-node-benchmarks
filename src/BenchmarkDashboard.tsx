@@ -49,7 +49,10 @@ const BenchmarkDashboard = () => {
           <SelectContent>
             <SelectItem value="basic">Basic</SelectItem>
             <SelectItem value="file">File</SelectItem>
-            <SelectItem value="http">HTTP</SelectItem>
+            <SelectItem value="http" disabled>
+              HTTP{" "}
+              <span className="ml-2 text-xs text-muted-foreground">(soon)</span>
+            </SelectItem>
             <SelectItem value="package-manager">Package Manager</SelectItem>
           </SelectContent>
         </Select>

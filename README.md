@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# Bun vs Node.js Performance Comparison
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I decided to visualize & publish the benchmark results of my graduation thesis. You can have a look at the results here; or you can visit the benchmarking repository to do your own tests and see what I did closer.
 
-Currently, two official plugins are available:
+As always, any contribution, feedback or insight is appreciated. Either to this or original repo.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+If you plan to share any information from this project, please credit this repository or the benchmarking repository as your source.
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The project is structured as follows:
 
-- Configure the top-level `parserOptions` property like this:
+- `src/`: Source code
+  - `components/`: Reusable components
+  - `data/`: Benchmark result data, formatted and served
+  - `hooks/`: Custom React hooks
+  - `types/`: TypeScript type definitions
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Getting Started
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+To run this project locally:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Clone the repository
+2. Install dependencies:
+   ```
+   npm install
+   ```
+   or if you're using Bun:
+   ```
+   bun install
+   ```
+3. Start the development server:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+   ```
+   npm run dev
+   ```
+
+   or with Bun:
+
+   ```
+   bun run dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## Built with
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Recharts (for data visualization)
+- Shadcn UI (for UI components)
