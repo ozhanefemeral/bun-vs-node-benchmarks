@@ -21,10 +21,14 @@ const BenchmarkDashboard = () => {
   );
 
   useEffect(() => {
-    if (filteredTests.length > 0) {
+    const isCurrentTestValid = filteredTests.some(
+      (test) => test.filename === selectedTest
+    );
+
+    if (!isCurrentTestValid && filteredTests.length > 0) {
       setSelectedTest(filteredTests[0].filename);
     }
-  }, [selectedType, filteredTests]);
+  }, [selectedType, filteredTests, selectedTest]);
 
   const selectedTestInfo = testResults.find(
     (test) => test.filename === selectedTest
@@ -66,8 +70,23 @@ const BenchmarkDashboard = () => {
           </SelectTrigger>
           <SelectContent>
             {filteredTests.map((test) => (
-              <SelectItem key={test.filename} value={test.filename}>
+              <SelectItem
+                key={test.filename}
+                value={test.filename}
+                disabled={[
+                  "very_large_json_read.json",
+                  "very_large_csv_read.json",
+                ].includes(test.filename)}
+              >
                 {test.title}
+                {[
+                  "very_large_json_read.json",
+                  "very_large_csv_read.json",
+                ].includes(test.filename) && (
+                  <span className="ml-2 text-xs text-muted-foreground">
+                    (soon)
+                  </span>
+                )}
               </SelectItem>
             ))}
           </SelectContent>
