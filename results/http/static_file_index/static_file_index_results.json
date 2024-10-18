@@ -13,23 +13,23 @@
   "results": [
     {
       "name": "static_file_index_bun",
-      "bytesRead": 0,
-      "bytesWritten": 0,
-      "timeTakenSeconds": 3.391544503,
-      "req2xx": 0,
-      "latencyMean": 41772.79232,
-      "latencyMax": 99872,
-      "rpsMax": 66825.63994185018
+      "bytesRead": 322500000,
+      "bytesWritten": 7700000,
+      "timeTakenSeconds": 5.153033373,
+      "req2xx": 100000,
+      "latencyMean": 63552.61492,
+      "latencyMax": 172247,
+      "rpsMax": 34701.316914976924
     },
     {
       "name": "static_file_index_node",
-      "bytesRead": 0,
-      "bytesWritten": 0,
-      "timeTakenSeconds": 3.329215784,
-      "req2xx": 0,
-      "latencyMean": 41067.8851,
-      "latencyMax": 98930,
-      "rpsMax": 110790.92862206815
+      "bytesRead": 329000000,
+      "bytesWritten": 7700000,
+      "timeTakenSeconds": 14.383895643,
+      "req2xx": 100000,
+      "latencyMean": 178411.65978,
+      "latencyMax": 14315397,
+      "rpsMax": 18341.424703789813
     }
   ]
 }

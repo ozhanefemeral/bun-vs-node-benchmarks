@@ -13,23 +13,23 @@
   "results": [
     {
       "name": "api_movies_query_date_genre_bun",
-      "bytesRead": 0,
-      "bytesWritten": 0,
-      "timeTakenSeconds": 3.260684724,
+      "bytesRead": 7923456,
+      "bytesWritten": 207100,
+      "timeTakenSeconds": 350.849424078,
       "req2xx": 0,
-      "latencyMean": 40221.00421,
-      "latencyMax": 109345,
-      "rpsMax": 95554.6045760381
+      "latencyMean": 4325504.05699,
+      "latencyMax": 215684933,
+      "rpsMax": 50078.14761673498
     },
     {
       "name": "api_movies_query_date_genre_node",
-      "bytesRead": 0,
-      "bytesWritten": 0,
-      "timeTakenSeconds": 3.304118411,
-      "req2xx": 0,
-      "latencyMean": 40733.85304,
-      "latencyMax": 91861,
-      "rpsMax": 87474.64709878474
+      "bytesRead": 311100000,
+      "bytesWritten": 10900000,
+      "timeTakenSeconds": 29.300963642,
+      "req2xx": 100000,
+      "latencyMean": 363248.77896,
+      "latencyMax": 29201345,
+      "rpsMax": 5489.383754361649
     }
   ]
 }

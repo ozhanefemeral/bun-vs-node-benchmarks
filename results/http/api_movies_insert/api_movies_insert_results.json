@@ -15,21 +15,21 @@
       "name": "api_movies_insert_bun",
       "bytesRead": 0,
       "bytesWritten": 0,
-      "timeTakenSeconds": 3.265315685,
+      "timeTakenSeconds": 3.635884411,
       "req2xx": 0,
-      "latencyMean": 40207.6343,
-      "latencyMax": 97863,
-      "rpsMax": 107618.15870359344
+      "latencyMean": 44736.34341,
+      "latencyMax": 120705,
+      "rpsMax": 108792.90936662545
     },
     {
       "name": "api_movies_insert_node",
-      "bytesRead": 0,
-      "bytesWritten": 0,
-      "timeTakenSeconds": 3.285061533,
-      "req2xx": 0,
-      "latencyMean": 40499.21834,
-      "latencyMax": 95847,
-      "rpsMax": 120453.82509798359
+      "bytesRead": 19070208,
+      "bytesWritten": 21200000,
+      "timeTakenSeconds": 133.901916882,
+      "req2xx": 99324,
+      "latencyMean": 1589992.95095,
+      "latencyMax": 68411290,
+      "rpsMax": 41472.39350418783
     }
   ]
 }

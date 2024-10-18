@@ -4,7 +4,7 @@
     "testType": "number-of-requests",
     "numberOfRequests": 100000,
     "method": "GET",
-    "url": "http://164.92.195.139:6693/api/user?id=5909",
+    "url": "http://164.92.195.139:6693/api/user?id=24233",
     "body": "",
     "stream": false,
     "timeoutSeconds": 30,
@@ -13,23 +13,23 @@
   "results": [
     {
       "name": "api_user_populated_random_bun",
-      "bytesRead": 0,
-      "bytesWritten": 0,
-      "timeTakenSeconds": 3.267868865,
-      "req2xx": 0,
-      "latencyMean": 40312.50637,
-      "latencyMax": 111061,
-      "rpsMax": 105053.28963961742
+      "bytesRead": 50500000,
+      "bytesWritten": 8400000,
+      "timeTakenSeconds": 27.817742813,
+      "req2xx": 100000,
+      "latencyMean": 345294.93241,
+      "latencyMax": 820722,
+      "rpsMax": 61097.936635397054
     },
     {
       "name": "api_user_populated_random_node",
-      "bytesRead": 0,
-      "bytesWritten": 0,
-      "timeTakenSeconds": 3.323625193,
-      "req2xx": 0,
-      "latencyMean": 40962.40061,
-      "latencyMax": 93114,
-      "rpsMax": 78682.35475987646
+      "bytesRead": 158500000,
+      "bytesWritten": 8436372,
+      "timeTakenSeconds": 38.99066018,
+      "req2xx": 100000,
+      "latencyMean": 479176.50119,
+      "latencyMax": 38932597,
+      "rpsMax": 3464.217502808989
     }
   ]
 }
