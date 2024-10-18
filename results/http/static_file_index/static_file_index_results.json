@@ -1,0 +1,35 @@
+{
+  "spec": {
+    "numberOfConnections": 1250,
+    "testType": "number-of-requests",
+    "numberOfRequests": 100000,
+    "method": "GET",
+    "url": "http://164.92.195.139:6693/index.html",
+    "body": "",
+    "stream": false,
+    "timeoutSeconds": 30,
+    "client": "fasthttp"
+  },
+  "results": [
+    {
+      "name": "static_file_index_bun",
+      "bytesRead": 0,
+      "bytesWritten": 0,
+      "timeTakenSeconds": 3.391544503,
+      "req2xx": 0,
+      "latencyMean": 41772.79232,
+      "latencyMax": 99872,
+      "rpsMax": 66825.63994185018
+    },
+    {
+      "name": "static_file_index_node",
+      "bytesRead": 0,
+      "bytesWritten": 0,
+      "timeTakenSeconds": 3.329215784,
+      "req2xx": 0,
+      "latencyMean": 41067.8851,
+      "latencyMax": 98930,
+      "rpsMax": 110790.92862206815
+    }
+  ]
+}

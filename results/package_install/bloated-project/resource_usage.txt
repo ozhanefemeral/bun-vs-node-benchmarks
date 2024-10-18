@@ -1,0 +1,70 @@
+Bun:
+bun add v1.1.30 (7996d06b)
+Saved lockfile
+
+installed moment@2.30.1
+
+1 package installed [41.00ms]
+	Command being timed: "bash -c rm -rf /root/bun-vs-node/tests/package_install/bloated-project/node_modules/moment && cd /root/bun-vs-node/tests/package_install/bloated-project && bun add moment"
+	User time (seconds): 0.02
+	System time (seconds): 0.04
+	Percent of CPU this job got: 116%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.05
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 29564
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3985
+	Voluntary context switches: 9
+	Involuntary context switches: 14
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 744
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+NPM:
+
+added 1 package, and audited 938 packages in 2s
+
+116 packages are looking for funding
+  run `npm fund` for details
+
+13 vulnerabilities (3 low, 2 moderate, 4 high, 4 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+	Command being timed: "bash -c rm -rf /root/bun-vs-node/tests/package_install/bloated-project/node_modules/moment && cd /root/bun-vs-node/tests/package_install/bloated-project && npm install moment"
+	User time (seconds): 3.02
+	System time (seconds): 0.32
+	Percent of CPU this job got: 138%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.41
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 143244
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 35574
+	Voluntary context switches: 12492
+	Involuntary context switches: 6997
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 11880
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
