@@ -10,7 +10,7 @@ export const fileTestResults = [
     filename: "single_large_json_parse.json",
     title: "Large JSON Parse",
     mainDescription:
-      "Read and parse a big (~350Mb) JSON file . (Time in seconds)",
+      "Read and parse a big (~350Mb) JSON file. (Time in seconds)",
     description:
       "Bun was slightly faster for parsing large JSON. Bun's own API was about 1.47 times faster than Node.js.",
   },
@@ -20,7 +20,7 @@ export const fileTestResults = [
     mainDescription:
       "Read and write many (100.000) small files (~1Kb) one by one. (Time in seconds)",
     description:
-      "Bun's Node API was faster for sequential small file operations. It was about 1.24 times faster than Node.js. However, Bun runtime with Bun native libraries were drastically slower. Seems like it is best to avoid Bun API for reading small files in a directory, sequentially.",
+      "Bun with Node API was faster for sequential small file operations. It was about 1.24 times faster than Node.js. However, Bun runtime with Bun native libraries were drastically slower. Seems like it is best to avoid Bun API for reading small files in a directory, sequentially.",
   },
   {
     filename: "small_files_parallel.json",
@@ -33,31 +33,28 @@ export const fileTestResults = [
   {
     filename: "write_large_file.json",
     title: "Write Big File",
-    mainDescription:
-      "Write a big JSON file with 400,000 things. (Time in seconds)",
+    mainDescription: "Write a big (~350Mb) JSON file. (Time in seconds)",
     description:
-      "Bun was faster for writing large files. Bun's own API was about 2.28 times faster than Node.js. This shows Bun is efficient at handling big data writes.",
+      "Bun was faster for writing large files. Bun's own API was about 2.28 times faster than Node.js. Running the same Node.js code with Bun as the runtime is still 1.66 times faster.",
   },
   {
     filename: "write_small_files.json",
     title: "Write Small Files",
     mainDescription: "Write 100,000 small JSON files. (Time in seconds)",
     description:
-      "Bun was much faster for writing many small files. Bun's Node API was about 3.63 times faster than Node.js. This shows Bun is very good at managing many small write operations.",
+      "Bun was much faster for writing many small files. Bun with Node API was about 3.63 times faster than plain Node.js. This shows Bun is very good at managing many small write operations.",
   },
   {
     filename: "very_large_csv_read.json",
     title: "Read Very Big CSV File",
     mainDescription: "Read a very big CSV file (1GB). (Time in seconds)",
-    description:
-      "Bun was faster for reading very large CSV files. Both Bun APIs were about 1.24 times faster than Node.js. This shows Bun is efficient at processing big data files.",
+    description: "To be added.",
   },
   {
     filename: "very_large_json_read.json",
     title: "Read Very Big JSON File",
     mainDescription: "Read a very big JSON file (1GB). (Time in seconds)",
-    description:
-      "Bun was faster for reading and parsing very large JSON files. Bun was 1.24 times faster than Node; both with either using it's own API or Node API.",
+    description: "To be added.",
   },
 ];
 
@@ -208,52 +205,8 @@ export const getFileChartData = (filename: string) => {
         },
       ];
     case "very_large_csv_read.json":
-      return [
-        {
-          name: "Bun with Bun API",
-          value: 1.638,
-          stddev: 0.037,
-          min: 1.594,
-          max: 1.708,
-        },
-        {
-          name: "Bun with Node API",
-          value: 1.639,
-          stddev: 0.037,
-          min: 1.595,
-          max: 1.709,
-        },
-        {
-          name: "Node.js",
-          value: 2.037,
-          stddev: 0.037,
-          min: 1.993,
-          max: 2.107,
-        },
-      ];
+      return [];
     case "very_large_json_read.json":
-      return [
-        {
-          name: "Bun with Bun API",
-          value: 1.638,
-          stddev: 0.037,
-          min: 1.594,
-          max: 1.708,
-        },
-        {
-          name: "Bun with Node API",
-          value: 1.639,
-          stddev: 0.037,
-          min: 1.595,
-          max: 1.709,
-        },
-        {
-          name: "Node.js",
-          value: 2.037,
-          stddev: 0.037,
-          min: 1.993,
-          max: 2.107,
-        },
-      ];
+      return [];
   }
 };
