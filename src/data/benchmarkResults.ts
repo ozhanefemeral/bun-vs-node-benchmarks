@@ -1,4 +1,9 @@
-import { TestResult, BenchmarkType } from "../types/benchmarks";
+import {
+  TestResult,
+  BenchmarkType,
+  HTTPChartDataPoint,
+  ChartDataPoint,
+} from "../types/benchmarks";
 import { basicTestResults, getBasicChartData } from "./basicBenchmarks";
 import { httpTestResults, getHttpChartData } from "./httpBenchmarks";
 import { fileTestResults, getFileChartData } from "./fileBenchmarks";
@@ -17,7 +22,10 @@ export const testResults: TestResult[] = [
   })),
 ];
 
-export const getChartData = (filename: string, type: BenchmarkType) => {
+export const getChartData = (
+  filename: string,
+  type: BenchmarkType
+): HTTPChartDataPoint[] | ChartDataPoint[] => {
   switch (type) {
     case "basic":
       return getBasicChartData(filename);

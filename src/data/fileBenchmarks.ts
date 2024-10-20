@@ -1,3 +1,5 @@
+import { ChartDataPoint } from "@/types/benchmarks";
+
 export const fileTestResults = [
   {
     filename: "compress.json",
@@ -60,7 +62,7 @@ export const fileTestResults = [
   },
 ];
 
-export const getFileChartData = (filename: string) => {
+export const getFileChartData = (filename: string): ChartDataPoint[] => {
   switch (filename) {
     case "compress.json":
       return [
@@ -138,24 +140,24 @@ export const getFileChartData = (filename: string) => {
       return [
         {
           name: "Bun with Bun API",
-          value: 2.2671864726599997,
-          stddev: 0.02584562252662924,
-          min: 2.23297956946,
-          max: 2.30503148846,
+          value: 2.267,
+          stddev: 0.026,
+          min: 2.233,
+          max: 2.305,
         },
         {
           name: "Bun with Node API",
-          value: 2.57888649276,
-          stddev: 0.023491026050649615,
-          min: 2.52980498746,
-          max: 2.61780863546,
+          value: 2.579,
+          stddev: 0.023,
+          min: 2.53,
+          max: 2.618,
         },
         {
           name: "Node.js",
-          value: 13.27471116566,
-          stddev: 0.12035138598410554,
-          min: 13.124649292460001,
-          max: 13.47130707246,
+          value: 13.275,
+          stddev: 0.12,
+          min: 13.125,
+          max: 13.471,
         },
       ];
     case "write_large_file.json":
@@ -211,18 +213,21 @@ export const getFileChartData = (filename: string) => {
         {
           name: "Bun with Bun API",
           value: 3.642,
+          stddev: 0.109,
           min: 3.461,
           max: 3.912,
         },
         {
           name: "Bun with Node API",
           value: 19.151,
+          stddev: 0.566,
           min: 18.478,
           max: 23.612,
         },
         {
           name: "Node with Node API",
           value: 10.245,
+          stddev: 0.387,
           min: 9.604,
           max: 11.525,
         },
@@ -232,21 +237,25 @@ export const getFileChartData = (filename: string) => {
         {
           name: "Bun with Bun API",
           value: 18.254,
+          stddev: 0.305,
           min: 17.553,
           max: 18.913,
         },
         {
           name: "Bun with Node API",
           value: 31.023,
+          stddev: 0.851,
           min: 29.708,
           max: 36.362,
         },
         {
           name: "Node with Node API",
           value: 22.896,
+          stddev: 0.691,
           min: 21.728,
           max: 27.063,
         },
       ];
   }
+  return [];
 };

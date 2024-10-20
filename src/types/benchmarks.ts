@@ -23,7 +23,7 @@ export interface ChartData {
 
 export interface HTTPChartDataPoint {
   name: string;
-  value: string;
+  value: number;
   rpsMax: number;
   successRate: number;
 }

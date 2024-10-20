@@ -12,6 +12,7 @@ import { testResults, getChartData } from "./data/benchmarkResults";
 import BenchmarkChart from "./components/BenchmarkChart";
 import TestInfo from "./components/TestInfo";
 import HttpBenchmarkChart from "./components/HttpBenchmarkChart";
+import { ChartDataPoint, HTTPChartDataPoint } from "./types/benchmarks";
 
 const BenchmarkDashboard = () => {
   const [selectedType, setSelectedType] = useState<string>("basic");
@@ -82,7 +83,7 @@ const BenchmarkDashboard = () => {
           <SelectContent>
             <SelectItem value="basic">Basic</SelectItem>
             <SelectItem value="file">File</SelectItem>
-            <SelectItem value="http">HTTP</SelectItem>
+            <SelectItem value="http">HTTP & SQLite</SelectItem>
             <SelectItem value="package-manager">Package Manager</SelectItem>
           </SelectContent>
         </Select>
@@ -108,9 +109,15 @@ const BenchmarkDashboard = () => {
       {chartData && (
         <div className="h-[400px]">
           {isHttpTest ? (
-            <HttpBenchmarkChart chartData={chartData} colors={colors} />
+            <HttpBenchmarkChart
+              chartData={chartData as HTTPChartDataPoint[]}
+              colors={colors}
+            />
           ) : (
-            <BenchmarkChart chartData={chartData} colors={colors} />
+            <BenchmarkChart
+              chartData={chartData as ChartDataPoint[]}
+              colors={colors}
+            />
           )}
         </div>
       )}

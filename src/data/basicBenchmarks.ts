@@ -1,3 +1,5 @@
+import { ChartDataPoint } from "@/types/benchmarks";
+
 export const basicTestResults = [
   {
     filename: "fibonacci.json",
@@ -32,7 +34,7 @@ export const basicTestResults = [
   },
 ];
 
-export const getBasicChartData = (filename: string) => {
+export const getBasicChartData = (filename: string): ChartDataPoint[] => {
   switch (filename) {
     case "fibonacci.json":
       return [
@@ -102,5 +104,7 @@ export const getBasicChartData = (filename: string) => {
           max: 0.034,
         },
       ];
+    default:
+      return [];
   }
 };
