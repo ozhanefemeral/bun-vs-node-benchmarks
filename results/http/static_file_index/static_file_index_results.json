@@ -15,21 +15,21 @@
       "name": "static_file_index_bun",
       "bytesRead": 322500000,
       "bytesWritten": 7700000,
-      "timeTakenSeconds": 5.153033373,
+      "timeTakenSeconds": 4.755572326,
       "req2xx": 100000,
-      "latencyMean": 63552.61492,
-      "latencyMax": 172247,
-      "rpsMax": 34701.316914976924
+      "latencyMean": 58526.61422,
+      "latencyMax": 148316,
+      "rpsMax": 38054.90786726308
     },
     {
       "name": "static_file_index_node",
       "bytesRead": 329000000,
       "bytesWritten": 7700000,
-      "timeTakenSeconds": 14.383895643,
+      "timeTakenSeconds": 14.91393171,
       "req2xx": 100000,
-      "latencyMean": 178411.65978,
-      "latencyMax": 14315397,
-      "rpsMax": 18341.424703789813
+      "latencyMean": 185090.89216,
+      "latencyMax": 14850376,
+      "rpsMax": 22904.52835307085
     }
   ]
 }
