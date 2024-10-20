@@ -20,3 +20,10 @@ export interface ChartData {
   type: BenchmarkType;
   data: ChartDataPoint[];
 }
+
+export interface HTTPChartDataPoint {
+  name: string;
+  value: string;
+  rpsMax: number;
+  successRate: number;
+}

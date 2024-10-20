@@ -1,4 +1,5 @@
-import { ChartDataPoint } from "@/types/benchmarks";
+import React from "react";
+import { HTTPChartDataPoint } from "@/types/benchmarks";
 import {
   Bar,
   BarChart,
@@ -9,8 +10,8 @@ import {
   LabelList,
 } from "recharts";
 
-interface BenchmarkChartProps {
-  chartData: ChartDataPoint[];
+interface HttpBenchmarkChartProps {
+  chartData: HTTPChartDataPoint[];
   colors: {
     bunPink: string;
     nodeGreen: string;
@@ -19,7 +20,7 @@ interface BenchmarkChartProps {
   };
 }
 
-const BenchmarkChart: React.FC<BenchmarkChartProps> = ({
+const HttpBenchmarkChart: React.FC<HttpBenchmarkChartProps> = ({
   chartData,
   colors,
 }) => {
@@ -77,26 +78,28 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({
           <LabelList
             dataKey="value"
             position="insideTop"
-            content={({ x, y, width, value, min, max }) => {
+            content={(props) => {
+              const { x, y, width, value, index } = props;
+              const entry = chartData[index!];
               const xPos = typeof x === "number" ? x : 0;
               const yPos = typeof y === "number" ? y : 0;
               const barWidth = typeof width === "number" ? width : 0;
 
               const formattedValue = Number(value).toFixed(3) + "s";
-              const formattedMin = min ? Number(min).toFixed(3) + "s" : "";
-              const formattedMax = max ? Number(max).toFixed(3) + "s" : "";
-              const rangeText =
-                formattedMin && formattedMax
-                  ? `${formattedMin} - ${formattedMax}`
-                  : "";
+              const formattedRpsMax = entry.rpsMax
+                ? Number(entry.rpsMax).toFixed(2)
+                : "";
+              const formattedSuccessRate = entry.successRate
+                ? (Number(entry.successRate) * 100).toFixed(2) + "%"
+                : "";
 
               return (
                 <g>
                   <rect
-                    x={xPos + barWidth / 2 - 45}
+                    x={xPos + barWidth / 2 - 60}
                     y={yPos + 5}
-                    width="90"
-                    height="45"
+                    width="120"
+                    height="60"
                     fill={`${colors.backgroundColor}80`}
                     rx="4"
                     ry="4"
@@ -117,7 +120,16 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({
                     textAnchor="middle"
                     fontSize="10"
                   >
-                    {rangeText}
+                    {`RPS (max): ${formattedRpsMax}`}
+                  </text>
+                  <text
+                    x={xPos + barWidth / 2}
+                    y={yPos + 50}
+                    fill={colors.textColor}
+                    textAnchor="middle"
+                    fontSize="10"
+                  >
+                    {`Success: ${formattedSuccessRate}`}
                   </text>
                 </g>
               );
@@ -129,4 +141,4 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({
   );
 };
 
-export default BenchmarkChart;
+export default HttpBenchmarkChart;

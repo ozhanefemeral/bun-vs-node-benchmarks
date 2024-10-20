@@ -11,6 +11,7 @@ import { useDarkMode } from "./hooks/useDarkMode";
 import { testResults, getChartData } from "./data/benchmarkResults";
 import BenchmarkChart from "./components/BenchmarkChart";
 import TestInfo from "./components/TestInfo";
+import HttpBenchmarkChart from "./components/HttpBenchmarkChart";
 
 const BenchmarkDashboard = () => {
   const [selectedType, setSelectedType] = useState<string>("basic");
@@ -63,7 +64,9 @@ const BenchmarkDashboard = () => {
           url += `file/${selectedTest.replace(".json", "")}`;
         }
         break;
-      // Add cases for other types if needed
+      case "http":
+        url += `http`;
+        break;
     }
 
     window.open(url, "_blank");
@@ -79,10 +82,7 @@ const BenchmarkDashboard = () => {
           <SelectContent>
             <SelectItem value="basic">Basic</SelectItem>
             <SelectItem value="file">File</SelectItem>
-            <SelectItem value="http" disabled>
-              HTTP{" "}
-              <span className="ml-2 text-xs text-muted-foreground">(soon)</span>
-            </SelectItem>
+            <SelectItem value="http">HTTP</SelectItem>
             <SelectItem value="package-manager">Package Manager</SelectItem>
           </SelectContent>
         </Select>
@@ -107,11 +107,11 @@ const BenchmarkDashboard = () => {
 
       {chartData && (
         <div className="h-[400px]">
-          <BenchmarkChart
-            chartData={chartData}
-            colors={colors}
-            isHttpTest={isHttpTest}
-          />
+          {isHttpTest ? (
+            <HttpBenchmarkChart chartData={chartData} colors={colors} />
+          ) : (
+            <BenchmarkChart chartData={chartData} colors={colors} />
+          )}
         </div>
       )}
     </div>
