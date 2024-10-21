@@ -8,6 +8,7 @@ import {
   YAxis,
   LabelList,
 } from "recharts";
+import { useMediaQuery } from "react-responsive";
 
 interface BenchmarkChartProps {
   chartData: ChartDataPoint[];
@@ -23,6 +24,8 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({
   chartData,
   colors,
 }) => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
   const getBarColor = (name: string) => {
     if (name.startsWith("Bun")) {
       return colors.bunPink;
@@ -39,8 +42,16 @@ const BenchmarkChart: React.FC<BenchmarkChartProps> = ({
 
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <BarChart data={chartData}>
-        <XAxis dataKey="name" tick={{ fill: colors.textColor }} />
+      <BarChart data={chartData} margin={{ left: 10, right: 10 }}>
+        <XAxis
+          dataKey="name"
+          tick={{ fill: colors.textColor }}
+          interval={0}
+          angle={isMobile ? -45 : 0}
+          textAnchor={isMobile ? "end" : "middle"}
+          height={isMobile ? 100 : 60}
+          tickFormatter={(value) => (isMobile ? value.split(" ")[0] : value)}
+        />
         <YAxis
           tick={{ fill: colors.textColor }}
           tickFormatter={(value) => `${value}s`}
