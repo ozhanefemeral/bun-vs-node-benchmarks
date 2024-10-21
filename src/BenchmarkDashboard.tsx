@@ -75,9 +75,9 @@ const BenchmarkDashboard = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="mb-4 mx-auto flex space-x-4">
+      <div className="mb-4 mx-auto flex flex-col w-full sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
         <Select onValueChange={setSelectedType} defaultValue={selectedType}>
-          <SelectTrigger className="w-[200px]">
+          <SelectTrigger className="w-full flex-grow">
             <SelectValue placeholder="Select benchmark type" />
           </SelectTrigger>
           <SelectContent>
@@ -89,7 +89,7 @@ const BenchmarkDashboard = () => {
         </Select>
 
         <Select onValueChange={setSelectedTest} value={selectedTest}>
-          <SelectTrigger className="w-[280px]">
+          <SelectTrigger className="w-full flex-grow">
             <SelectValue placeholder="Select a test" />
           </SelectTrigger>
           <SelectContent>
@@ -101,7 +101,9 @@ const BenchmarkDashboard = () => {
           </SelectContent>
         </Select>
 
-        <Button onClick={handleSeeCode}>See Code</Button>
+        <Button onClick={handleSeeCode} className="w-full sm:w-auto">
+          See Code
+        </Button>
       </div>
 
       <TestInfo selectedTest={selectedTest} />

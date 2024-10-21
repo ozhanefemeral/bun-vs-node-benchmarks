@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const InformationTabs: React.FC = () => {
   return (
     <Tabs defaultValue="about" className="w-full">
-      <TabsList className="grid w-full grid-cols-4">
+      <TabsList className="grid w-full h-fit grid-cols-2 sm:grid-cols-4 gap-2">
         <TabsTrigger value="about">About</TabsTrigger>
         <TabsTrigger value="system-specs">System Specs</TabsTrigger>
         <TabsTrigger value="tools-versions">Tools & Versions</TabsTrigger>
