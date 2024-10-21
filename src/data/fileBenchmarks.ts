@@ -34,7 +34,7 @@ export const fileTestResults = [
   },
   {
     filename: "write_large_file.json",
-    title: "Write Big File",
+    title: "Write Large File",
     mainDescription: "Write a big (~350Mb) JSON file. (Time in seconds)",
     description:
       "Bun was faster for writing large files. Bun's own API was about 2.28 times faster than Node.js. Running the same Node.js code with Bun as the runtime is still 1.66 times faster.",
@@ -48,14 +48,14 @@ export const fileTestResults = [
   },
   {
     filename: "very_large_csv_read.json",
-    title: "Read Very Big CSV File",
+    title: "Read Very Large CSV File",
     mainDescription: "Read a very big CSV file (1GB). (Time in seconds)",
     description:
       "Bun with Bun API was significantly faster for reading a very large CSV file, being about 2.81 times faster than Node.js. Interestingly, running Node.js code with Bun as the runtime was slower than both Bun with Bun API and Node.js itself.",
   },
   {
     filename: "very_large_json_read.json",
-    title: "Read Very Big JSON File",
+    title: "Read Very Large JSON File",
     mainDescription: "Read a very big JSON file (1GB). (Time in seconds)",
     description:
       "Bun with Bun API was the fastest for reading a very large JSON file, being about 1.25 times faster than Node.js. Interestingly, running Node.js code with Bun as the runtime was slower than both Bun with Bun API and Node.js itself.",

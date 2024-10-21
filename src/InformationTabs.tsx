@@ -57,7 +57,10 @@ const InformationTabs: React.FC = () => {
         <Card>
           <CardContent className="space-y-2 pt-6">
             <h3 className="text-2xl font-semibold">System Specifications</h3>
-            <p>The test environment specifications are as follows:</p>
+            <p>
+              The test environment is a DigitalOcean droplet. Specifications are
+              as follows:
+            </p>
             <ul className="list-disc pl-5 space-y-1">
               <li>8GB RAM</li>
               <li>4 Dedicated Intel CPUs</li>
@@ -75,8 +78,13 @@ const InformationTabs: React.FC = () => {
               <ul className="list-disc pl-5 space-y-1">
                 <li>Hyperfine: For precise timing measurements</li>
                 <li>Bombardier: For HTTP server stress testing</li>
-                <li>Digital Ocean: Cloud platform for HTTP server tests</li>
-                <li>Ubuntu: Operating system for test environments</li>
+                <li>
+                  Digital Ocean: Cloud platform for HTTP servers and test
+                  environment
+                </li>
+                <li>
+                  Ubuntu: Operating system for HTTP servers and test environment
+                </li>
                 <li>Git: Version control system</li>
               </ul>
             </div>
@@ -86,7 +94,7 @@ const InformationTabs: React.FC = () => {
                 <li>Node.js: v20.16.0 (released 2024-07-24)</li>
                 <li>NPM: v10.8.1</li>
                 <li>Bun: v1.1.21 (released 2024-07-20)</li>
-                <li>Ubuntu: 24.04 LTS (on Digital Ocean)</li>
+                <li>Ubuntu: 24.04 LTS</li>
               </ul>
             </div>
           </CardContent>
@@ -122,9 +130,7 @@ console.log(data);`}
             </div>
             <p>
               This comparison allows for assessment of potential performance
-              improvements when transitioning to Bun, as well as evaluating
-              Bun's viability as a direct replacement for Node.js in existing
-              codebases.
+              improvements if code is rewritten for Bun, or kept same.
             </p>
           </CardContent>
         </Card>
