@@ -113,7 +113,7 @@ const InformationTabs: React.FC = () => {
               <h4 className="text-lg font-medium mt-2">
                 Node.js Implementation:
               </h4>
-              <pre className="bg-muted p-2 rounded-md">
+              <pre className="bg-muted p-2 rounded-md overflow-scroll">
                 <code>
                   {`const fs = require('fs');
 const data = fs.readFileSync('file.txt', 'utf8');
@@ -121,7 +121,7 @@ console.log(data);`}
                 </code>
               </pre>
               <h4 className="text-lg font-medium mt-2">Bun Implementation:</h4>
-              <pre className="bg-muted p-2 rounded-md">
+              <pre className="bg-muted p-2 rounded-md overflow-scroll">
                 <code>
                   {`const data = Bun.file('file.txt').text();
 console.log(data);`}
