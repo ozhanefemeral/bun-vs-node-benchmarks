@@ -4,7 +4,8 @@ export const fileTestResults = [
   {
     filename: "compress.json",
     title: "File Compression",
-    mainDescription: "Read and compress a big (~350Mb) file. (Time in seconds)",
+    mainDescription:
+      "Read and compress a large (~350Mb) file. (Time in seconds)",
     description:
       "Bun uses it's native Gzip implementation for compression, while we used 'zlib' library for Node.js. Running Node.js code with Bun was about 1.2 times faster than Node.js itself, while rewriting it with Bun libraries made it slightly slower.",
   },
@@ -12,7 +13,7 @@ export const fileTestResults = [
     filename: "single_large_json_parse.json",
     title: "Large JSON Parse",
     mainDescription:
-      "Read and parse a big (~350Mb) JSON file. (Time in seconds)",
+      "Read and parse a large (~350Mb) JSON file. (Time in seconds)",
     description:
       "Bun was slightly faster for parsing large JSON. Bun's own API was about 1.47 times faster than Node.js.",
   },
@@ -35,7 +36,7 @@ export const fileTestResults = [
   {
     filename: "write_large_file.json",
     title: "Write Large File",
-    mainDescription: "Write a big (~350Mb) JSON file. (Time in seconds)",
+    mainDescription: "Write a large (~350Mb) JSON file. (Time in seconds)",
     description:
       "Bun was faster for writing large files. Bun's own API was about 2.28 times faster than Node.js. Running the same Node.js code with Bun as the runtime is still 1.66 times faster.",
   },
@@ -49,14 +50,14 @@ export const fileTestResults = [
   {
     filename: "very_large_csv_read.json",
     title: "Read Very Large CSV File",
-    mainDescription: "Read a very big CSV file (1GB). (Time in seconds)",
+    mainDescription: "Read a very large CSV file (1GB). (Time in seconds)",
     description:
       "Bun with Bun API was significantly faster for reading a very large CSV file, being about 2.81 times faster than Node.js. Interestingly, running Node.js code with Bun as the runtime was slower than both Bun with Bun API and Node.js itself.",
   },
   {
     filename: "very_large_json_read.json",
     title: "Read Very Large JSON File",
-    mainDescription: "Read a very big JSON file (1GB). (Time in seconds)",
+    mainDescription: "Read a very large JSON file (1GB). (Time in seconds)",
     description:
       "Bun with Bun API was the fastest for reading a very large JSON file, being about 1.25 times faster than Node.js. Interestingly, running Node.js code with Bun as the runtime was slower than both Bun with Bun API and Node.js itself.",
   },

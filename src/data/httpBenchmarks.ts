@@ -20,9 +20,9 @@ export const httpTestResults = [
     filename: "static_file_index.json",
     title: "Serving Static Files",
     mainDescription:
-      "Send a big index.html file (~5Mb) with HTML, CSS, and JPEG. (Time in seconds)",
+      "Send a index.html file (~5Mb) with HTML, CSS, and JPEG. (Time in seconds)",
     description:
-      "Bun was much faster for sending big static files. It was about 3.14 times faster than Node.js. This test used the same number of connections and requests as before. This shows Bun is very good at quickly sending large files to many users at once.",
+      "Bun was much faster for sending static files. It was about 3.14 times faster than Node.js. This test used the same number of connections and requests as before. This shows Bun is very good at quickly sending files to many users at once.",
   },
   {
     filename: "api_user_populated_random.json",
